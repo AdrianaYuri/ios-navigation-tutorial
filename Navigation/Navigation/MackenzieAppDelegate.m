@@ -3,30 +3,30 @@
 //  Navigation
 //
 //  Created by Vinicius Miana on 2/21/14.
-//  Copyright (c) 2014 Vinicius Miana. All rights reserved.
-//
+
+
 
 #import "MackenzieAppDelegate.h"
-#import "LetraAViewController.h"
+#import "ClasseViewController.h"
 
 @implementation MackenzieAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    LetraAViewController *viewController = [[LetraAViewController alloc]
+    ClasseViewController *viewController = [[ClasseViewController alloc]
                                            initWithNibName:nil
                                            bundle:nil];
     
     
     self.navigationController = [[UINavigationController alloc]
-                                 initWithRootViewController:viewController];
+                                 initWithRootViewController: viewController];
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController;
 
 
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor purpleColor];
     [self.window makeKeyAndVisible];
     
     return YES;
