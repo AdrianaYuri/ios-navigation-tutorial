@@ -10,10 +10,12 @@
 #import "Objeto.h"
 
 @interface ClasseViewController : UIViewController{
-    Objeto *tela;
+    Objeto *palavraTela;
+    NSInteger indice;
 }
 
-@property Objeto *tela;
+@property Objeto *palavraTela;
+@property NSInteger indice;
 
 - (id)initWithPalavra :(Objeto*) dicionario ;
 

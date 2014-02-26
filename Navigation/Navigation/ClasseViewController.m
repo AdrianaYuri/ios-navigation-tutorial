@@ -15,58 +15,97 @@
 
 @implementation ClasseViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        tela = [[[Singleton sharedInstance]retornaArray]objectAtIndex:0];
-    }
-    return self;
-}
-
-
 
 -(void) viewDidLoad {
     [super viewDidLoad];
-    self.title = [tela retornaPrimeiraLetra];
+    
+  
+  [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]]];
+    
+    self.title = [palavraTela retornaPrimeiraLetra];
+    
+    if (indice < [[[Singleton sharedInstance] retornaArray] count]-1) {
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
     self.navigationItem.rightBarButtonItem=next;
+    }
+    else{
+        UIBarButtonItem*voltar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(voltar:)];
+    self.navigationItem.rightBarButtonItem=voltar;
+    }
     
     UIButton *botao = [UIButton
                        buttonWithType:UIButtonTypeSystem];
+    
     [botao
      setTitle:@"Palavra"
      forState:UIControlStateNormal];
     [botao sizeToFit];
     botao.center = self.view.center;
     
+    UIImageView *img = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[palavraTela imagem]]];
+    [self.view addSubview: img];
+    img.center = self.view.center;
+    [img.layer setBorderColor: [[UIColor blueColor] CGColor]];
+    [img.layer setBorderWidth: 5.0];
+
+    
+    //mudar x e tamanho retangulo para centralizar
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(120, 330, 400, 100)];
+    [label setFont:[UIFont fontWithName:@"Verdana" size: 30]];
+    
+    [label setTextColor:[UIColor blueColor]];
+    
+    label.text = [palavraTela palavra];
+    [self.view addSubview:label];
+    
+    
+//    self.window.backgroundColor = [UIColor purpleColor];
+    
     
     
     
 }
-- (id)initWithPalavra :(Objeto*) dicionario {
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        indice = 0;
+        palavraTela = [[[Singleton sharedInstance]retornaArray]objectAtIndex:indice];
+    }
+    return self;
+}
+
+
+- (id)initWithPalavra :(Objeto*) palavraAtual {
 
     self = [super init];
     if (self)
     {
-        tela = dicionario;
-        
+        palavraTela = palavraAtual;
+        indice = [[[Singleton sharedInstance]retornaArray]indexOfObject:palavraAtual];
     }
     return self;
 }
 
 -(void)next:(id)sender {
-    ClasseViewController *proximo = [[ClasseViewController alloc]
-                                          initWithNibName:nil
-                                          bundle:NULL];
+    Objeto *proximaPalavra;
+    proximaPalavra = [[[Singleton sharedInstance] retornaArray] objectAtIndex:indice+1];
+    ClasseViewController *proximo = [[ClasseViewController alloc] initWithPalavra:proximaPalavra];
+                                      
     [self.navigationController pushViewController:proximo
                                          animated:YES];
     
 }
 
-
+-(void)voltar:(id)sender {
+    
+    
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning
