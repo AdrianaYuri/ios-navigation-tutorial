@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Objeto.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ClasseViewController : UIViewController{
     Objeto *palavraTela;
@@ -16,6 +17,9 @@
 
 @property Objeto *palavraTela;
 @property NSInteger indice;
+@property (strong, nonatomic) AVSpeechSynthesizer *fala;
+@property (strong, nonatomic) AVSpeechUtterance *som;
+
 
 - (id)initWithPalavra :(Objeto*) dicionario ;
 

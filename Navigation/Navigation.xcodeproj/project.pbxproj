@@ -29,6 +29,12 @@
 		EC6396A818BE814000A153EB /* bola.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6396A518BE814000A153EB /* bola.png */; };
 		EC6396A918BE814000A153EB /* carro.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6396A618BE814000A153EB /* carro.png */; };
 		EC6396AB18BE838200A153EB /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6396AA18BE838200A153EB /* background.png */; };
+		EC6396B018BFB5D900A153EB /* dado.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6396AC18BFB5D900A153EB /* dado.png */; };
+		EC6396B118BFB5D900A153EB /* elefante.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC6396AD18BFB5D900A153EB /* elefante.jpg */; };
+		EC6396B218BFB5D900A153EB /* foca.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6396AE18BFB5D900A153EB /* foca.png */; };
+		EC6396B318BFB5D900A153EB /* gato.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6396AF18BFB5D900A153EB /* gato.png */; };
+		EC6396B518BFB6E600A153EB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6396B418BFB6E600A153EB /* AVFoundation.framework */; };
+		EC6396B718BFCA0500A153EB /* iconVoz.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6396B618BFCA0500A153EB /* iconVoz.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +79,12 @@
 		EC6396A518BE814000A153EB /* bola.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bola.png; sourceTree = "<group>"; };
 		EC6396A618BE814000A153EB /* carro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carro.png; sourceTree = "<group>"; };
 		EC6396AA18BE838200A153EB /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		EC6396AC18BFB5D900A153EB /* dado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dado.png; sourceTree = "<group>"; };
+		EC6396AD18BFB5D900A153EB /* elefante.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = elefante.jpg; sourceTree = "<group>"; };
+		EC6396AE18BFB5D900A153EB /* foca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foca.png; sourceTree = "<group>"; };
+		EC6396AF18BFB5D900A153EB /* gato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gato.png; sourceTree = "<group>"; };
+		EC6396B418BFB6E600A153EB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EC6396B618BFCA0500A153EB /* iconVoz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconVoz.png; path = ../../iconVoz.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6396B518BFB6E600A153EB /* AVFoundation.framework in Frameworks */,
 				27156F4F18B76AF50053A99C /* CoreGraphics.framework in Frameworks */,
 				27156F5118B76AF50053A99C /* UIKit.framework in Frameworks */,
 				27156F4D18B76AF50053A99C /* Foundation.framework in Frameworks */,
@@ -121,6 +134,7 @@
 		27156F4B18B76AF50053A99C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC6396B418BFB6E600A153EB /* AVFoundation.framework */,
 				27156F4C18B76AF50053A99C /* Foundation.framework */,
 				27156F4E18B76AF50053A99C /* CoreGraphics.framework */,
 				27156F5018B76AF50053A99C /* UIKit.framework */,
@@ -156,7 +170,12 @@
 				EC6396A418BE814000A153EB /* aviao.png */,
 				EC6396A518BE814000A153EB /* bola.png */,
 				EC6396A618BE814000A153EB /* carro.png */,
+				EC6396AC18BFB5D900A153EB /* dado.png */,
+				EC6396AD18BFB5D900A153EB /* elefante.jpg */,
+				EC6396AE18BFB5D900A153EB /* foca.png */,
+				EC6396AF18BFB5D900A153EB /* gato.png */,
 				EC6396AA18BE838200A153EB /* background.png */,
+				EC6396B618BFCA0500A153EB /* iconVoz.png */,
 				EC63969218BE62CA00A153EB /* background.png */,
 				27156F5418B76AF50053A99C /* Navigation-Info.plist */,
 				27156F5518B76AF50053A99C /* InfoPlist.strings */,
@@ -232,6 +251,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Vinicius Miana";
 				TargetAttributes = {
+					27156F4818B76AF50053A99C = {
+						DevelopmentTeam = 7AK2UMWHJK;
+					};
 					27156F6318B76AF50053A99C = {
 						TestTargetID = 27156F4818B76AF50053A99C;
 					};
@@ -261,12 +283,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC6396A718BE814000A153EB /* aviao.png in Resources */,
+				EC6396B318BFB5D900A153EB /* gato.png in Resources */,
 				EC6396A918BE814000A153EB /* carro.png in Resources */,
 				EC6396AB18BE838200A153EB /* background.png in Resources */,
+				EC6396B018BFB5D900A153EB /* dado.png in Resources */,
 				EC6396A818BE814000A153EB /* bola.png in Resources */,
 				EC63969318BE62CA00A153EB /* background.png in Resources */,
+				EC6396B218BFB5D900A153EB /* foca.png in Resources */,
 				27156F5718B76AF50053A99C /* InfoPlist.strings in Resources */,
 				27156F5F18B76AF50053A99C /* Images.xcassets in Resources */,
+				EC6396B718BFCA0500A153EB /* iconVoz.png in Resources */,
+				EC6396B118BFB5D900A153EB /* elefante.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,10 +437,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Navigation/Navigation-Prefix.pch";
 				INFOPLIST_FILE = "Navigation/Navigation-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -423,10 +455,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Navigation/Navigation-Prefix.pch";
 				INFOPLIST_FILE = "Navigation/Navigation-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

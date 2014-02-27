@@ -34,14 +34,7 @@
     self.navigationItem.rightBarButtonItem=voltar;
     }
     
-    UIButton *botao = [UIButton
-                       buttonWithType:UIButtonTypeSystem];
     
-    [botao
-     setTitle:@"Palavra"
-     forState:UIControlStateNormal];
-    [botao sizeToFit];
-    botao.center = self.view.center;
     
     UIImageView *img = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[palavraTela imagem]]];
     [self.view addSubview: img];
@@ -50,14 +43,30 @@
     [img.layer setBorderWidth: 5.0];
 
     
-    //mudar x e tamanho retangulo para centralizar
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(120, 330, 400, 100)];
-    [label setFont:[UIFont fontWithName:@"Verdana" size: 30]];
     
+    //mudar x e tamanho retangulo para centralizar
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 295, 320, 100)];
+    [label setFont:[UIFont fontWithName:@"Verdana-Bold" size: 30]];
     [label setTextColor:[UIColor blueColor]];
+    label.textAlignment = UITextAlignmentCenter;
     
     label.text = [palavraTela palavra];
     [self.view addSubview:label];
+    
+    
+    UIButton *botaoVoz = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    botaoVoz.frame = CGRectMake(0, 335, 320, 100);
+    [botaoVoz setImage:[UIImage imageNamed:@"iconVoz.png"] forState:UIControlStateNormal];
+    	[botaoVoz addTarget:self action:@selector(falar:) forControlEvents:UIControlEventTouchUpInside];
+     [self.view addSubview:botaoVoz];
+
+    
+    
+    
+//    
+//    [botao setTitle:@"Palavra" forState:UIControlStateNormal];
+//    [botao sizeToFit];
+//    botao.center = self.img.center;
     
     
 //    self.window.backgroundColor = [UIColor purpleColor];
@@ -114,4 +123,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)falar:(id)sender{
+    
+    AVSpeechUtterance *palavraFalada = [AVSpeechUtterance speechUtteranceWithString: [palavraTela palavra]];
+    palavraFalada.rate = AVSpeechUtteranceMinimumSpeechRate;
+    palavraFalada.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"pt-BR"];
+    
+    AVSpeechSynthesizer *voz = [[AVSpeechSynthesizer alloc] init];
+    
+    [voz speakUtterance:palavraFalada];
+
+}
 @end
